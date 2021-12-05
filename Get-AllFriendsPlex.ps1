@@ -1,1 +1,1 @@
-[xml](Invoke-WebRequest -Uri 'https://plex.tv/api/users?&X-Plex-Token=<XPLEXTOKEN>&X-Plex-Language=en') | Select-Object MediaContainer -ExpandProperty MediaContainer | Select-Object User -ExpandProperty User | % {$_.username}
+[xml](Invoke-WebRequest -Uri 'https://plex.tv/api/users?&X-Plex-Token=<XPLEXTOKEN>&X-Plex-Language=en') | Select-Object MediaContainer -ExpandProperty MediaContainer | Select-Object User -ExpandProperty User | % {$_ | Select Username, Email}
